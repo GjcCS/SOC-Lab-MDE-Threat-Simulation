@@ -263,47 +263,6 @@ DeviceRegistryEvents
     AccountName
 | order by Timestamp desc
 ```
-
-### Query 5 — Unified Attack Timeline (All Scenarios)
-
-```kql
-let TimeRange = ago(24h);
-let TargetDevice = "vm-soc-lab-01";
-
-let BruteForce = DeviceLogonEvents
-| where DeviceName == TargetDevice and Timestamp > TimeRange
-| where ActionType == "LogonFailed"
-| project Timestamp, Category = "BruteForce",
-    Detail = strcat("LogonFailed: ", AccountName, " from ", RemoteIP),
-    Process = "lsass.exe";
-
-let PrivEsc = DeviceEvents
-| where DeviceName == TargetDevice and Timestamp > TimeRange
-| where ActionType in ("UserAccountCreated","UserAccountAddedToLocalGroup")
-| project Timestamp, Category = "PrivilegeEscalation",
-    Detail = strcat(ActionType, ": ", AccountName),
-    Process = InitiatingProcessFileName;
-
-let ObfPS = DeviceProcessEvents
-| where DeviceName == TargetDevice and Timestamp > TimeRange
-| where FileName == "powershell.exe"
-| where ProcessCommandLine has_any ("-EncodedCommand","-NoExit","-WindowStyle Hidden","Bypass")
-| project Timestamp, Category = "ObfuscatedPowerShell",
-    Detail = substring(ProcessCommandLine, 0, 100),
-    Process = InitiatingProcessFileName;
-
-let ASEPReg = DeviceRegistryEvents
-| where DeviceName == TargetDevice and Timestamp > TimeRange
-| where RegistryKey has "CurrentVersion\\Run"
-| project Timestamp, Category = "ASEPPersistence",
-    Detail = strcat(RegistryKey, " = ", RegistryValueData),
-    Process = InitiatingProcessFileName;
-
-union BruteForce, PrivEsc, ObfPS, ASEPReg
-| order by Timestamp asc
-| project Timestamp, Category, Process, Detail
-```
-
 ---
 
 ## 🗺️ MITRE ATT&CK Coverage
@@ -338,7 +297,6 @@ soc-lab-mde-threat-simulation/
 │   ├── privesc-detection.kql
 │   ├── obfuscated-ps-detection.kql
 │   ├── asep-persistence-detection.kql
-│   └── unified-attack-timeline.kql
 └── screenshots/
     ├── 01-device-onboarded.png
     ├── 02-telemetry-tables.png
