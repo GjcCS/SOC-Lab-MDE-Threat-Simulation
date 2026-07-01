@@ -14,8 +14,6 @@
 
 This project documents the design and implementation of a **cloud-based SOC home lab** built on Microsoft Azure, used to simulate, detect, and investigate real cyberattack scenarios using **Microsoft Defender for Endpoint (MDE)**.
 
-The lab was built as part of my preparation for the **SC-200: Microsoft Security Operations Analyst** certification and as a hands-on portfolio piece demonstrating practical SOC Tier 1 analyst skills.
-
 ### Objectives
 
 - Deploy and configure a cloud VM with MDE onboarding via Microsoft Defender for Cloud
