@@ -1,0 +1,17 @@
+DeviceProcessEvents
+| where DeviceName == "vm-soc-lab-01"
+| where Timestamp > ago(24h)
+| where FileName == "powershell.exe"
+| where ProcessCommandLine has_any (
+    "-EncodedCommand", "-enc ", "-NoExit",
+    "-WindowStyle Hidden", "-ExecutionPolicy Bypass",
+    "FromBase64String", "DownloadString",
+    "DownloadFile", "IEX", "Invoke-Expression"
+)
+| project
+    Timestamp,
+    ProcessCommandLine,
+    InitiatingProcessFileName,
+    InitiatingProcessCommandLine,
+    AccountName
+| order by Timestamp desc
