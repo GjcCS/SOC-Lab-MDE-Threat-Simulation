@@ -1,0 +1,18 @@
+DeviceRegistryEvents
+| where DeviceName == "vm-soc-lab-01"
+| where Timestamp > ago(24h)
+| where RegistryKey has_any (
+    "\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+    "\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce",
+    "\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+)
+| project
+    Timestamp,
+    ActionType,
+    RegistryKey,
+    RegistryValueName,
+    RegistryValueData,
+    InitiatingProcessFileName,
+    InitiatingProcessCommandLine,
+    AccountName
+| order by Timestamp desc
