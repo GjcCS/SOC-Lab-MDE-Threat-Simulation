@@ -185,9 +185,9 @@ This project documents the design and implementation of a **cloud-based SOC home
 
 **Portal Screenshots:**
 
-![Alerts and Anomalies](INCIDENTS-AND-ALERTS/Alerts-and-Anomalies)
-![Process Tree](INCIDENTS-AND-ALERTS/Process-Tree-Alerts)
-![Device Onboarded](INCIDENTS-AND-ALERTS/Device-Onboarded)
+[📂 Device Onboarded](https://github.com/GjcCS/SOC-Lab-MDE-Threat-Simulation/tree/main/INCIDENTS-AND-ALERTS/Device-Onboarded)
+[📂 Alerts and Anomalies](https://github.com/GjcCS/SOC-Lab-MDE-Threat-Simulation/tree/main/INCIDENTS-AND-ALERTS/Alerts-and-Anomalies)
+[📂 Process Tree Alerts](https://github.com/GjcCS/SOC-Lab-MDE-Threat-Simulation/tree/main/INCIDENTS-AND-ALERTS/Process-Tree-Alerts)
 
 ---
 
