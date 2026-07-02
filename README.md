@@ -95,8 +95,7 @@ This project documents the design and implementation of a **cloud-based SOC home
 
 **Results confirmed:** 40 failed logon attempts against `targetuser` over a 29-minute window (6:45 PM → 7:14 PM). Source IP `::1` (loopback) confirms controlled self-attack lab scenario.
 
-[![KQL Query 1 - Brute Force Results](KQL-QUERY-1/KQL_QUERY_1.png)](https://github.com/GjcCS/SOC-Lab-MDE-Threat-Simulation/tree/main/KQL-QUERIES/KQL-QUERY-1)
-
+![KQL Query 1 - Brute Force Results](https://raw.githubusercontent.com/GjcCS/SOC-Lab-MDE-Threat-Simulation/main/KQL-QUERY-1/KQL_QUERY_1.png)
 ---
 
 ### Attack #2 — Local Privilege Escalation
@@ -115,8 +114,7 @@ This project documents the design and implementation of a **cloud-based SOC home
 
 **Results confirmed:** Two separate escalation chains detected and captured by MDE in `DeviceEvents`.
 
-[![KQL Query 2 - Privilege Escalation Results](KQL-QUERY-2/KQL_QUERY_2.png)](https://github.com/GjcCS/SOC-Lab-MDE-Threat-Simulation/tree/main/KQL-QUERIES/KQL-QUERY-2)
-
+![KQL Query 2 - Privilege Escalation Results](https://raw.githubusercontent.com/GjcCS/SOC-Lab-MDE-Threat-Simulation/main/KQL-QUERY-2/KQL_QUERY_2.png)
 ---
 
 ### Attack #3 — Obfuscated PowerShell Execution
@@ -134,8 +132,7 @@ This project documents the design and implementation of a **cloud-based SOC home
 
 **Results confirmed:** Multiple `powershell.exe → powershell.exe` child chains detected. Activity spanning Jun 30 7:09 PM through Jul 1 12:53 AM.
 
-[![KQL Query 3 - Obfuscated PowerShell Results](KQL-QUERY-3/KQL_QUERY_3.png)](https://github.com/GjcCS/SOC-Lab-MDE-Threat-Simulation/tree/main/KQL-QUERIES/KQL-QUERY-3)
-
+![KQL Query 3 - Obfuscated PowerShell Results](https://raw.githubusercontent.com/GjcCS/SOC-Lab-MDE-Threat-Simulation/main/KQL-QUERY-3/KQL_QUERY_3.png)
 ---
 
 ### Attack #4 — Registry Persistence (ASEP)
@@ -153,8 +150,7 @@ This project documents the design and implementation of a **cloud-based SOC home
 
 **Results confirmed:** `RegistryValueSet` event captured at Jul 1 12:54 AM. Triggered a **Medium severity alert** in the Defender portal with full Process Tree visualization.
 
-[![KQL Query 4 - ASEP Registry Results](KQL-QUERY-4/KQL_QUERY_4.png)](https://github.com/GjcCS/SOC-Lab-MDE-Threat-Simulation/tree/main/KQL-QUERIES/KQL-QUERY-4)
-
+![KQL Query 4 - ASEP Registry Results](https://raw.githubusercontent.com/GjcCS/SOC-Lab-MDE-Threat-Simulation/main/KQL-QUERY-4/KQL_QUERY_4.png)
 ---
 
 ## 🚨 Incidents & Alerts Generated in Portal
