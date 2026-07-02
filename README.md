@@ -185,9 +185,9 @@ This project documents the design and implementation of a **cloud-based SOC home
 
 **Portal Screenshots:**
 
-![Alerts and Anomalies](INCIDENTS-AND-ALERTS/alerts-and-anomalies/alert-overview.png)
-![Process Tree](INCIDENTS-AND-ALERTS/process-tree-alerts/process-tree.png)
-![Device Onboarded](INCIDENTS-AND-ALERTS/device-onboarded/device-status.png)
+![Alerts and Anomalies](INCIDENTS-AND-ALERTS/Alerts-and-Anomalies)
+![Process Tree](INCIDENTS-AND-ALERTS/Process-Tree-Alerts)
+![Device Onboarded](INCIDENTS-AND-ALERTS/Device-Onboarded)
 
 ---
 
