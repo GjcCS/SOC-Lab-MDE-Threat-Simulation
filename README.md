@@ -208,8 +208,6 @@ Data confirmed across all 4 MDE tables within 24 hours of attack execution:
 
 All 4 queries validated in Microsoft Defender Advanced Hunting with confirmed results.
 
-> **Critical SC-200 note:** MDE Advanced Hunting uses `Timestamp` — NOT `TimeGenerated` (that is Microsoft Sentinel). This distinction is tested on the exam.
-
 ### Query 1 — Brute Force Detection
 > Table: `DeviceLogonEvents` | Technique: T1110.001
 
@@ -340,7 +338,6 @@ SOC-Lab-MDE-Threat-Simulation/
 
 ## 🎓 Key Learnings
 
-- **MDE vs Sentinel schema:** `Timestamp` in MDE Advanced Hunting vs `TimeGenerated` in Sentinel — critical SC-200 distinction
 - **`withsource=` syntax:** Required for identifying source tables in `union` queries in MDE — `$table` and `Type` do not work
 - **Alert severity tiers:** Only Medium+ alerts automatically generate Incidents with Attack Story visualization — Informational alerts do not create Incidents
 - **EICAR offline handling:** Defender processes EICAR entirely offline due to its known signature — generates `AntivirusDetection` telemetry but not a portal Incident
